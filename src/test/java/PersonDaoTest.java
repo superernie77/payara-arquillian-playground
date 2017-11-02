@@ -34,7 +34,7 @@ public class PersonDaoTest {
 
         assertNotNull(personList);
         assertThat(personList.size(), is(1));
-        assertThat(personList.get(0).getName(), is("John"));
-        assertThat(personList.get(0).getLastName(), is("Malkovich"));
+        assertThat(personList.get(0).getName(), is("Super"));
+        assertThat(personList.get(0).getLastName(), is("Ernie"));
     }
 }
