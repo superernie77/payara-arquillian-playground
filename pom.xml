@@ -89,15 +89,26 @@
 
     <build>
         <finalName>arquillian-example</finalName>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+            </testResource>
+        </testResources>
         <plugins>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
                 <configuration>
-                    <systemProperties>
-                        <arquillian.launch>glassfish-embedded</arquillian.launch>
-                    </systemProperties>
+                    <systemPropertyVariables>
+                        <java.util.logging.config.file>
+                            ${project.build.testOutputDirectory}/logging.properties
+                        </java.util.logging.config.file>
+                        <derby.stream.error.file>
+                            ${project.build.directory}/derby.log
+                        </derby.stream.error.file>
+                    </systemPropertyVariables>
                 </configuration>
+
             </plugin>
         </plugins>
         <testResources>
