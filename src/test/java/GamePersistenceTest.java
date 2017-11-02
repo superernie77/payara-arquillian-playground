@@ -56,6 +56,10 @@ public class GamePersistenceTest {
         utx.commit();
     }
 
+    /**
+     * Inserts the three default games
+     * @throws Exception
+     */
     private void insertData() throws Exception {
         utx.begin();
         em.joinTransaction();
