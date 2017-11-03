@@ -4,9 +4,9 @@ package com.se77.payara.ejb.stateless;
 import javax.ejb.Stateless;
 
 @Stateless
-public class MySessionBean {
+class MyStatelessSessionBean {
 
-    public String syaHello(){
+    String syaHello(){
         return "hi!";
     }
 }

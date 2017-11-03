@@ -17,11 +17,11 @@ public class MySessionBeanTest {
     @Deployment
     public static Archive<?> createDeployment() {
         return ShrinkWrap.create(WebArchive.class, "test.war")
-                .addPackage(MySessionBean.class.getPackage());
+                .addPackage(MyStatelessSessionBean.class.getPackage());
     }
 
     @EJB
-    private MySessionBean bean;
+    private MyStatelessSessionBean bean;
 
     @Test
     public void testMySessionBean(){
