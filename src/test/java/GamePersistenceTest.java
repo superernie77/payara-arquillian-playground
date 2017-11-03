@@ -19,6 +19,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Arquillian.class)
 public class GamePersistenceTest {
+
     @Deployment
     public static Archive<?> createDeployment() {
         return ShrinkWrap.create(WebArchive.class, "test.war")
@@ -30,7 +31,7 @@ public class GamePersistenceTest {
     /**
      * Since we use CDI without an EJB we need to do the transaction handling manually
      * in the before and after methods
-     * @throws Exception
+     * @throws Exception if DB init fails
      */
     @Before
     public void preparePersistenceTest() throws Exception {
@@ -46,7 +47,7 @@ public class GamePersistenceTest {
 
     /**
      * Attach transaction with PersistenceManager and delete old records from db
-     * @throws Exception
+     * @throws Exception if data cleanup fails
      */
     private void clearData() throws Exception {
         utx.begin();
@@ -58,7 +59,7 @@ public class GamePersistenceTest {
 
     /**
      * Inserts the three default games
-     * @throws Exception
+     * @throws Exception if test data input fails
      */
     private void insertData() throws Exception {
         utx.begin();
@@ -85,10 +86,10 @@ public class GamePersistenceTest {
     };
 
     @PersistenceContext
-    EntityManager em;
+    private EntityManager em;
 
     @Inject
-    UserTransaction utx;
+    private UserTransaction utx;
 
     @Test
     public void shouldFindAllGamesUsingJpqlQuery() throws Exception {
