@@ -1,4 +1,4 @@
-package com.se77.payara.ejb.remote;
+package com.se77.payara.ejb.stateless;
 
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -12,23 +12,19 @@ import org.junit.runner.RunWith;
 import javax.ejb.EJB;
 
 @RunWith(Arquillian.class)
-public class MyRemoteInterfaceTest {
+public class MyStatelessSessionBeanTest {
 
     @Deployment
     public static Archive<?> createDeployment() {
         return ShrinkWrap.create(WebArchive.class, "test.war")
-                .addPackage(MySessionRemoteEjb.class.getPackage());
+                .addPackage(MyStatelessSessionBean.class.getPackage());
     }
 
     @EJB
-    private MyRemoteInterface bean;
+    private MyStatelessSessionBean bean;
 
     @Test
-    public void remoteInterfaceTest() {
-
-        Assert.assertNotNull(bean);
-
+    public void testMySessionBean(){
         Assert.assertTrue(bean.sayHello().equals("hi!"));
     }
-
 }

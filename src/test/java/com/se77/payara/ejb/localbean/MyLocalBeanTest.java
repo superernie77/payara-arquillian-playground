@@ -1,5 +1,7 @@
-package com.se77.payara.ejb.remote;
+package com.se77.payara.ejb.localbean;
 
+import com.se77.payara.ejb.local.MyLocalInterface;
+import com.se77.payara.ejb.local.MySessionLocalEjb;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.Archive;
@@ -12,23 +14,19 @@ import org.junit.runner.RunWith;
 import javax.ejb.EJB;
 
 @RunWith(Arquillian.class)
-public class MyRemoteInterfaceTest {
+public class MyLocalBeanTest {
 
     @Deployment
     public static Archive<?> createDeployment() {
         return ShrinkWrap.create(WebArchive.class, "test.war")
-                .addPackage(MySessionRemoteEjb.class.getPackage());
+                .addPackage(MySessionLocalBeanEjb.class.getPackage());
     }
 
     @EJB
-    private MyRemoteInterface bean;
+    private MySessionLocalBeanEjb bean;
 
     @Test
-    public void remoteInterfaceTest() {
-
+    public void beanExistsTest() {
         Assert.assertNotNull(bean);
-
-        Assert.assertTrue(bean.sayHello().equals("hi!"));
     }
-
 }

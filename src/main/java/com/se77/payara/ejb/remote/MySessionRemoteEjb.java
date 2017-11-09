@@ -4,7 +4,7 @@ import javax.ejb.Remote;
 import javax.ejb.Stateless;
 
 @Stateless
-public class MyStatelessBean implements MyRemoteInterface {
+public class MySessionRemoteEjb implements MyRemoteInterface {
 
     public String sayHello(){
         return "hi!";

@@ -13,16 +13,16 @@ import org.junit.runner.RunWith;
 import javax.ejb.EJB;
 
 @RunWith(Arquillian.class)
-public class MyStatefulBeanTest {
+public class MyStatefulSessionBeanTest {
 
     @Deployment
     public static Archive<?> createDeployment() {
         return ShrinkWrap.create(WebArchive.class, "test.war")
-                .addPackage(MyStatefulBean.class.getPackage());
+                .addPackage(MyStatefulSessionBean.class.getPackage());
     }
 
     @EJB
-    private MyStatefulBean bean;
+    private MyStatefulSessionBean bean;
 
     @Test
     public void testStatefulBean(){
