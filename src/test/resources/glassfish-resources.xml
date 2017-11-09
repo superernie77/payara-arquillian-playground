@@ -3,6 +3,40 @@
         "-//GlassFish.org//DTD GlassFish Application Server 3.1 Resource Definitions//EN"
         "http://glassfish.org/dtds/glassfish-resources_1_5.dtd">
 <resources>
+
+    <!-- definition of the JMS queue-->
+    <admin-object-resource enabled="true" jndi-name="jms/queue/example" object-type="user" res-adapter="jmsra" res-type="javax.jms.Queue">
+        <description/>
+        <property name="Name" value="myQueue"/>
+    </admin-object-resource>
+
+    <!-- definition of the connection factory to connecto to queue-->
+    <connector-resource enabled="true" jndi-name="jms/ConnectionFactory" object-type="user" pool-name="jms/exampleConnectionPool">
+        <description/>
+    </connector-resource>
+
+    <!-- connection pool for JMS connections -->
+    <connector-connection-pool associate-with-thread="false"
+                                connection-creation-retry-attempts="0"
+                                connection-creation-retry-interval-in-seconds="10"
+                                connection-definition-name="javax.jms.QueueConnectionFactory"
+                                connection-leak-reclaim="false"
+                                connection-leak-timeout-in-seconds="0"
+                                fail-all-connections="false"
+                                idle-timeout-in-seconds="300"
+                                is-connection-validation-required="false"
+                                lazy-connection-association="false"
+                                lazy-connection-enlistment="false"
+                                match-connections="true"
+                                max-connection-usage-count="0"
+                                max-pool-size="32"
+                                max-wait-time-in-millis="60000"
+                                name="jms/exampleConnectionPool"
+                                pool-resize-quantity="2"
+                                resource-adapter-name="jmsra"
+                                steady-pool-size="8"
+                                validate-atmost-once-period-in-seconds="0"/>
+
     <jdbc-resource pool-name="ArquillianEmbeddedDerbyPool"
                    jndi-name="jdbc/arquillian"/>
     <jdbc-connection-pool name="ArquillianEmbeddedDerbyPool"
@@ -12,4 +46,5 @@
         <property name="databaseName" value="target/databases/derby"/>
         <property name="createDatabase" value="create"/>
     </jdbc-connection-pool>
+
 </resources>
