@@ -14,6 +14,10 @@ public class SimpleBeanPropertyAccess {
     @Lob // this is created as a CLOB-Field in the DB
     private String property2;
 
+    // This property will not be considered in the DB schema
+    @Transient
+    private String notPersisted;
+
     @Id
     @GeneratedValue
     public Long getId() {

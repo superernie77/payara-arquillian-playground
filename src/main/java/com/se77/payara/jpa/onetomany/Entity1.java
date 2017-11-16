@@ -11,7 +11,9 @@ public class Entity1 {
     @GeneratedValue
     private Long id;
 
-    @OneToMany
+    // the field one of entity EntityMany defines the relationship.
+    // EntityMany has a table with column Entity1-ID
+    @OneToMany(mappedBy = "one", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<EntityMany> manies;
 
     public Long getId() {
