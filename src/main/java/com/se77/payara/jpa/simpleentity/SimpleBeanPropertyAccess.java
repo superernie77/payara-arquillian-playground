@@ -6,7 +6,6 @@ import javax.persistence.*;
 @Access(AccessType.PROPERTY)
 public class SimpleBeanPropertyAccess {
 
-
     private Long id;
 
     // This is created as a varchar in the DB
