@@ -12,7 +12,7 @@ public class Entity1 {
     private Long id;
 
     // the field one of entity EntityMany defines the relationship.
-    // EntityMany has a table with column Entity1-ID
+    // EntityMany has a table with column EntityQ-ID
     @OneToMany(mappedBy = "one", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<EntityMany> manies;
 

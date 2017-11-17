@@ -61,22 +61,22 @@ public class SimpleBeanFieldBasesAccessTest {
     public void testEntityStates(){
         SimpleBeanFieldBasedAccess bean = new SimpleBeanFieldBasedAccess();
 
-        // Entity is still new
+        // EntityQ is still new
         Assert.assertFalse(em.contains(bean));
 
         em.persist(bean);
 
-        // Entity is managed by em
+        // EntityQ is managed by em
         Assert.assertTrue(em.contains(bean));
 
         em.detach(bean);
 
-        // Entity is detached
+        // EntityQ is detached
         Assert.assertFalse(em.contains(bean));
 
         em.remove(bean);
 
-        // Entity is removed
+        // EntityQ is removed
         Assert.assertNull(em.find(SimpleBeanFieldBasedAccess.class, bean.getId()));
 
     }

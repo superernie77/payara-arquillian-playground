@@ -15,8 +15,8 @@ public class SessionBean {
     @PersistenceContext
     private EntityManager em;
 
-    public Entity1 createNewEntity() throws Exception{
-        Entity1 entity = new Entity1();
+    public EntityC createNewEntity() throws Exception{
+        EntityC entity = new EntityC();
         em.persist(entity);
         return entity;
     }

@@ -8,7 +8,6 @@ import javax.ejb.TransactionManagementType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
-import java.util.List;
 
 @Stateless
 @LocalBean
@@ -22,10 +21,10 @@ public class SessionBean {
     @PersistenceContext
     private EntityManager em;
 
-    public Entity1 createNewEntity() throws Exception{
+    public EntityBM createNewEntity() throws Exception{
         ut.begin();
 
-        Entity1 entity = new Entity1();
+        EntityBM entity = new EntityBM();
         em.persist(entity);
 
         ut.commit();
@@ -33,8 +32,8 @@ public class SessionBean {
         return entity;
     }
 
-    public Entity1 createNewEntityWithExcption() throws Exception{
-        Entity1 entity = new Entity1();
+    public EntityBM createNewEntityWithExcption() throws Exception{
+        EntityBM entity = new EntityBM();
         em.persist(entity);
         return entity;
     }

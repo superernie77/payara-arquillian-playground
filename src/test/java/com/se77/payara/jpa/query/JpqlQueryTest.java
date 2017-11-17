@@ -1,5 +1,6 @@
-package com.se77.payara.jpa.containermgttrans;
+package com.se77.payara.jpa.query;
 
+import com.se77.payara.jpa.beanmgttrans.SessionBean;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.Archive;
@@ -14,21 +15,25 @@ import javax.ejb.EJB;
 import javax.ejb.EJBException;
 
 @RunWith(Arquillian.class)
-public class CotainerMgtTransactionTest {
+public class JpqlQueryTest {
 
     @Deployment
     public static Archive<?> createDeployment() {
         return ShrinkWrap.create(WebArchive.class, "test.war")
-                .addPackage(SessionBean.class.getPackage())
+                .addPackage(EntityQ.class.getPackage())
                 .addAsResource("test-persistence.xml", "META-INF/persistence.xml")
                 .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
     }
 
    @EJB
-   private SessionBean sessionBean;
+   private SessionBeanQuery sessionBean;
+
 
    @Test
-   public void testContainerMgtTransaction() throws Exception{
-         Assert.assertNotNull(sessionBean.createNewEntity());
+   public void testBeanMgtTransaction() throws Exception {
+
+       sessionBean.createNewEntity(3);
+
+       Assert.assertTrue(sessionBean.getAllEntities().size() == 3);
    }
 }
