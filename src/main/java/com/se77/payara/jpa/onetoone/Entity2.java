@@ -3,9 +3,10 @@ package com.se77.payara.jpa.onetoone;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 @Entity
-public class Entity2 {
+public class Entity2 implements Serializable {
 
     @Id @GeneratedValue
     private Long id;

@@ -1,13 +1,13 @@
-package com.se77.payara.jpa.onetoone;
+package com.se77.payara.jpa.containermgttrans;
+
+import com.se77.payara.jpa.onetoone.Entity2;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.servlet.ServletConfig;
-import java.io.Serializable;
 
 @Entity
-public class Entity1 implements Serializable {
+public class Entity1 {
 
     @Id
     @GeneratedValue
@@ -21,13 +21,5 @@ public class Entity1 implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Entity2 getEntity2() {
-        return entity2;
-    }
-
-    public void setEntity2(Entity2 entity2) {
-        this.entity2 = entity2;
     }
 }
