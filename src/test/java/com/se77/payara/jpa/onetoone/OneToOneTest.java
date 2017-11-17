@@ -1,4 +1,4 @@
-package com.se77.payara.jpa.simpleentity;
+package com.se77.payara.jpa.onetoone;
 
 import com.se77.payara.jpa.onetoone.Entity1;
 import com.se77.payara.jpa.onetoone.Entity2;
