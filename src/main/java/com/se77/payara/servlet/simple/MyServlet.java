@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(value={"/start","/myServlet"})
+@WebServlet(value={"/start4","/myServlet4"})
 public class MyServlet extends HttpServlet {
 
 

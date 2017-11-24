@@ -63,8 +63,5 @@ public class OneToOneTest {
         Assert.assertNotNull(result.getEntity2());
 
         Assert.assertNotNull(result.getEntity2().getEntity1());
-
-
-
     }
 }

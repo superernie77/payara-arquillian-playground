@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name="myServlet", urlPatterns={"/start","/myServlet"})
+@WebServlet(name="myServlet", urlPatterns={"/start2","/myServlet2"})
 public class MyServletWitMappings extends HttpServlet {
 
 

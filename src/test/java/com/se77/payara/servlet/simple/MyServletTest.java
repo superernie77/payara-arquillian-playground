@@ -35,7 +35,7 @@ public class MyServletTest {
     @Test
     @RunAsClient
     public void testLoginServlet() throws IOException {
-        URL url = new URL(deploymentUrl, "start");
+        URL url = new URL(deploymentUrl, "start4");
         StringBuilder builder = new StringBuilder();
         BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
         String line;

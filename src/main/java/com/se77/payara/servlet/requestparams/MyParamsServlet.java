@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(value={"/echo","/myServlet"})
+@WebServlet(value={"/echo"})
 public class MyParamsServlet extends HttpServlet {
 
 

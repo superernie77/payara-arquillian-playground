@@ -35,7 +35,7 @@ public class MyServletMappingsTest {
     @RunAsClient
     public void testFirstMapping() throws IOException {
         // Test first mapping
-        URL url = new URL(deploymentUrl, "start");
+        URL url = new URL(deploymentUrl, "start2");
         StringBuilder builder = new StringBuilder();
         BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
         String line;
@@ -52,7 +52,7 @@ public class MyServletMappingsTest {
     @RunAsClient
     public void testSecondMapping() throws IOException {
         // Test first mapping
-        URL url = new URL(deploymentUrl, "myServlet");
+        URL url = new URL(deploymentUrl, "myServlet2");
         StringBuilder builder = new StringBuilder();
         BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
         String line;
