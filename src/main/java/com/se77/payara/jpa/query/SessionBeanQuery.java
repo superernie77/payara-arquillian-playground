@@ -1,6 +1,5 @@
 package com.se77.payara.jpa.query;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
@@ -24,7 +23,8 @@ public class SessionBeanQuery {
         }
     }
 
-    public List<EntityQ> getAllEntities(){
+    @SuppressWarnings("unchecked")
+	public List<EntityQ> getAllEntities(){
         Query q = em.createQuery("SELECT e FROM EntityQ e ");
         return q.getResultList();
     }

@@ -8,7 +8,9 @@ import java.io.Serializable;
 @Entity
 public class Entity2 implements Serializable {
 
-    @Id @GeneratedValue
+	private static final long serialVersionUID = 1L;
+
+	@Id @GeneratedValue
     private Long id;
 
     private Entity1 entity1;

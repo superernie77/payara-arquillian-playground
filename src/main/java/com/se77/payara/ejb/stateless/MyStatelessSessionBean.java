@@ -3,7 +3,6 @@ package com.se77.payara.ejb.stateless;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
 @Stateless

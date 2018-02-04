@@ -10,8 +10,9 @@ import java.io.IOException;
 @WebServlet(name="myServlet", urlPatterns={"/start2","/myServlet2"})
 public class MyServletWitMappings extends HttpServlet {
 
+	private static final long serialVersionUID = 1L;
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse
+	protected void doGet(HttpServletRequest request, HttpServletResponse
             response) throws ServletException, IOException {
         response.getOutputStream().println("Hello World!");
     }

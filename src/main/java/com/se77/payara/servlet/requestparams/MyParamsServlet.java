@@ -11,8 +11,9 @@ import java.io.PrintWriter;
 @WebServlet(value={"/echo"})
 public class MyParamsServlet extends HttpServlet {
 
+	private static final long serialVersionUID = 1L;
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse
+	protected void doGet(HttpServletRequest request, HttpServletResponse
             response) throws ServletException, IOException {
 
         String param1 = request.getParameter("parameter1");

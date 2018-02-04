@@ -13,7 +13,7 @@ public class EntityMany {
     private Long id;
 
     @ManyToOne
-    private Entity1 one;
+    private EntityOne one;
 
     public Long getId() {
         return id;
@@ -23,11 +23,11 @@ public class EntityMany {
         this.id = id;
     }
 
-    public Entity1 getOne() {
+    public EntityOne getOne() {
         return one;
     }
 
-    public void setOne(Entity1 one) {
+    public void setOne(EntityOne one) {
         this.one = one;
     }
 }

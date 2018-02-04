@@ -1,6 +1,5 @@
 package com.se77.payara.servlet.mappings;
 
-import com.se77.payara.servlet.simple.MyServlet;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.container.test.api.RunAsClient;
 import org.jboss.arquillian.junit.Arquillian;

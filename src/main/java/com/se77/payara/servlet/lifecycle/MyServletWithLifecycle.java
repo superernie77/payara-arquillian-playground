@@ -1,6 +1,5 @@
 package com.se77.payara.servlet.lifecycle;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +12,9 @@ import java.util.Enumeration;
 @WebServlet(value={"/start","/myServlet"})
 public class MyServletWithLifecycle extends HttpServlet {
 
-    @Override
+	private static final long serialVersionUID = 1L;
+
+	@Override
     public void init(){
         System.out.println("Init method called with params :");
         Enumeration<String> params = getServletContext().getInitParameterNames();

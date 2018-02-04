@@ -1,7 +1,5 @@
 package com.se77.payara.ejb.localbean;
 
-import com.se77.payara.ejb.local.MyLocalInterface;
-import com.se77.payara.ejb.local.MySessionLocalEjb;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.Archive;

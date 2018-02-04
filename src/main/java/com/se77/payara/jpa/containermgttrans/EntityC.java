@@ -1,19 +1,16 @@
 package com.se77.payara.jpa.containermgttrans;
 
-import com.se77.payara.jpa.onetoone.Entity2;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@javax.persistence.Entity
+@Entity
 public class EntityC {
 
     @Id
     @GeneratedValue
     private Long id;
-
-    private Entity2 entity2;
 
     public Long getId() {
         return id;

@@ -11,7 +11,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import javax.ejb.EJB;
-import javax.ejb.EJBException;
 
 @RunWith(Arquillian.class)
 public class CotainerMgtTransactionTest {

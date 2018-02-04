@@ -3,13 +3,14 @@ package com.se77.payara.jpa.onetoone;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.servlet.ServletConfig;
 import java.io.Serializable;
 
 @Entity
 public class Entity1 implements Serializable {
 
-    @Id
+	private static final long serialVersionUID = 1L;
+
+	@Id
     @GeneratedValue
     private Long id;
 

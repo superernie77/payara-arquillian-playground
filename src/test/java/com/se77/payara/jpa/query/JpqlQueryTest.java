@@ -1,6 +1,5 @@
 package com.se77.payara.jpa.query;
 
-import com.se77.payara.jpa.beanmgttrans.SessionBean;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.Archive;
@@ -12,7 +11,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import javax.ejb.EJB;
-import javax.ejb.EJBException;
 
 @RunWith(Arquillian.class)
 public class JpqlQueryTest {

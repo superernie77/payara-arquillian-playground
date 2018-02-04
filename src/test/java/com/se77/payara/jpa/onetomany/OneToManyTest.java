@@ -18,7 +18,6 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 @RunWith(Arquillian.class)
 public class OneToManyTest {
@@ -50,7 +49,7 @@ public class OneToManyTest {
 
     @Test
     public void oneToOneRelationBidirectional(){
-        Entity1 ent1 = new Entity1();
+        EntityOne ent1 = new EntityOne();
         EntityMany many1 = new EntityMany();
         EntityMany many2 = new EntityMany();
 
@@ -66,14 +65,14 @@ public class OneToManyTest {
         many2.setOne(ent1);
         ent1.setManies(list);
 
-        Entity1 result = em.find(Entity1.class, ent1.getId());
+        EntityOne result = em.find(EntityOne.class, ent1.getId());
 
         Assert.assertNotNull(result.getManies().size() == 2);
     }
 
     @Test
     public void testcascadeDelete() throws Exception{
-        Entity1 ent1 = new Entity1();
+        EntityOne ent1 = new EntityOne();
         EntityMany many1 = new EntityMany();
         EntityMany many2 = new EntityMany();
 
@@ -95,7 +94,7 @@ public class OneToManyTest {
         utx.begin();
         em.joinTransaction();
 
-        Entity1 result = em.find(Entity1.class, ent1.getId());
+        EntityOne result = em.find(EntityOne.class, ent1.getId());
 
         // delete entire tree
         em.remove(result);

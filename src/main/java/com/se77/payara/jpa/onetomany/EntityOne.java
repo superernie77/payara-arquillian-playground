@@ -2,10 +2,9 @@ package com.se77.payara.jpa.onetomany;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 @Entity
-public class Entity1 {
+public class EntityOne {
 
     @Id
     @GeneratedValue
