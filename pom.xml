@@ -2,13 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>fish.payara.examples.javaee</groupId>
-	<artifactId>arquillian-example</artifactId>
+	<groupId>se77.examples.javaee</groupId>
+	<artifactId>arquillian-examples</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<name>arquillian-example</name>
-	<description>Payara Embedded example integrates with Arquillian</description>
+	<description>payara embedded examples tested with Arquillian</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -40,7 +40,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- Java EE 7 dependency for the EE API, strangly Eclipse wants this dependency although Spring Boot didn't include it-->
+		<!-- Java EE 7 dependency for the EE API, strangely Eclipse wants this dependency although Spring Boot didn't include it-->
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
